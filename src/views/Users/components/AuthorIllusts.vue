@@ -3,17 +3,17 @@
     <van-cell class="cell" :border="false" is-link @click="onClick()" v-if="once">
       <template #title>
         <span class="title">
-          插画作品
-          <span class="num" v-if="num">{{num}}件作品</span>
+          Artworks
+          <span class="num" v-if="num">{{num}}Works</span>
         </span>
       </template>
     </van-cell>
     <van-list
       v-model="loading"
       :finished="finished"
-      :finished-text="!once ? '没有更多了' : ''"
+      :finished-text="!once ? 'No More' : ''"
       :error.sync="error"
-      error-text="网络异常，点击重新加载"
+      error-text="Network error, click to reload"
       @load="getMemberArtwork()"
     >
       <div class="card-box">
