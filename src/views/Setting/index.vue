@@ -1,21 +1,21 @@
 <template>
   <div class="setting">
-    <van-cell center title="持久化缓存" :label="size.local | bytes">
+    <van-cell center title="Store Cache" :label="size.local | bytes">
       <template #right-icon>
-        <van-button type="primary" size="small" @click="clearCache('local')">清理</van-button>
+        <van-button type="primary" size="small" @click="clearCache('local')">Clean Up</van-button>
       </template>
     </van-cell>
-    <van-cell center title="运行时缓存" :label="size.session | bytes">
+    <van-cell center title="Browser Cache" :label="size.session | bytes">
       <template #right-icon>
-        <van-button type="info" size="small" @click="clearCache('session')">清理</van-button>
+        <van-button type="info" size="small" @click="clearCache('session')">Clean Up</van-button>
       </template>
     </van-cell>
-    <van-cell center title="R-18作品显示" label="包含裸露内容或性描写">
+    <van-cell center title="R-18 Display" label="Contains nudity or sexual">
       <template #right-icon>
         <van-switch :value="currentSETTING.r18" @input="onR18Change($event, 1)" size="24" />
       </template>
     </van-cell>
-    <van-cell center title="R-18G作品显示" label="包含血腥或恶心内容">
+    <van-cell center title="R-18G Display" label="Contains gore or disgusting content">
       <template #right-icon>
         <van-switch :value="currentSETTING.r18g" @input="onR18Change($event, 2)" size="24" />
       </template>
@@ -57,7 +57,7 @@ export default {
 
       if (checked) {
         Dialog.confirm({
-          message: `确定要开启${name}作品显示吗？请确保您的年龄已满18岁，且未违反当地法律法规所规定的内容`,
+          message: `Are you sure you want to turn on the display of works for ${name} Please make sure you are over 18 years old and have not violated local laws and regulations`,
           confirmButtonColor: "black",
           cancelButtonColor: "#1989fa",
           closeOnPopstate: true
@@ -68,7 +68,7 @@ export default {
               this.currentSETTING.r18g = checked;
               setTimeout(() => {
                 Dialog.alert({
-                  message: `请注意，开启${name}开关可能会对您的身心健康造成不可逆的影响，如若感到不适，请立即关闭应用并寻求医学帮助`
+                  message: `Please note that turning on the ${name} switch may have irreversible effects on your physical and mental health, if you feel unwell, please close the app immediately and seek medical help`
                 });
               }, 200);
             }
@@ -100,7 +100,7 @@ export default {
           break;
       }
       Dialog.confirm({
-        message: `确定要清理${showName}吗？清理后将重新从网络加载相关内容`,
+        message: `Are you sure you want to clean up ${showName} ?`,
         confirmButtonColor: "black",
         cancelButtonColor: "#1989fa",
         closeOnPopstate: true
@@ -109,7 +109,7 @@ export default {
         if (type === "session") SessionStorage.clear();
 
         this.calcCacheSize();
-        this.$toast.success("清理完成");
+        this.$toast.success("Success");
       });
     },
     ...mapActions(["saveSETTING"])
