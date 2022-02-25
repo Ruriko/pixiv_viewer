@@ -102,7 +102,7 @@ export default {
     view(index, censored) {
       if (censored) {
         this.$toast({
-          message: "根据当前设置，此内容将不予显示",
+          message: "Based on current settings, this content will not be displayed",
           icon: require("@/svg/ban-view.svg")
         });
       } else {
@@ -121,17 +121,17 @@ export default {
               // 预览界面长按显示ActionSheet
               var bts = [{ title: "保存至相册" }];
               plus.nativeUI.actionSheet(
-                { title: "选择操作", cancel: "取消", buttons: bts },
+                { title: "Select action", cancel: "Cancel", buttons: bts },
                 function(t) {
                   if (t.index == 1) {
                     //e.url e.path
                     plus.gallery.save(
                       e.url,
                       function() {
-                        plus.nativeUI.toast("保存成功");
+                        plus.nativeUI.toast("Saved successfully");
                       },
                       function() {
-                        plus.nativeUI.toast("保存失败");
+                        plus.nativeUI.toast("Failed to save");
                       }
                     );
                   }
@@ -273,7 +273,7 @@ export default {
     downloadWebM() {
       if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
         this.$toast({
-          message: "iOS 设备暂不支持 WebM 格式下载",
+          message: "iOS The device does not currently support WebM format download",
           icon: require("@/svg/error.svg")
         });
         return;
