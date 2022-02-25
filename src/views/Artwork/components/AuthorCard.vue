@@ -8,7 +8,7 @@
     <van-cell class="cell" :border="false" is-link @click="toAuthor(author.id)">
       <template #title>
         <img class="icon" :src="author.avatar" :alt="author.name" />
-        <span class="title">{{author.name}} 的其他作品</span>
+        <span class="title">{{author.name}} other works</span>
       </template>
     </van-cell>
     <div class="artwork-list-wrap" v-if="memberArtwork.length>=10">
@@ -25,7 +25,7 @@
           <ImageSlide class="slide" :images="slides">
             <div class="link" @click="toAuthor(author.id)">
               <Icon name="more" scale="20"></Icon>
-              <div>查看更多</div>
+              <div>View More</div>
             </div>
           </ImageSlide>
         </swiper-slide>
