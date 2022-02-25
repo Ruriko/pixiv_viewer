@@ -24,8 +24,8 @@
       v-model="ugoiraDownloadPanelShow"
       :actions="ugoiraDownloadPanelActions"
       @select="onUgoiraDownloadPanelSelect"
-      cancel-text="取消"
-      description="请选择下载格式"
+      cancel-text="Cancel"
+      description="Please select a download format"
       close-on-popstate
       close-on-click-action
     />
@@ -68,9 +68,9 @@ export default {
       },
       ugoiraDownloadPanelShow: false,
       ugoiraDownloadPanelActions: [
-        { name: "ZIP", subname: "原始序列帧归档文件" },
-        { name: "GIF", subname: "低画质，兼容性最佳" },
-        { name: "WebM", subname: "高画质，兼容性差" } // chrome only
+        { name: "ZIP", subname: "Raw sequence frame archive" },
+        { name: "GIF", subname: "Low quality, best compatibility" },
+        { name: "WebM", subname: "High quality, poor compatibility" } // chrome only
       ]
     };
   },
@@ -97,7 +97,7 @@ export default {
 
         if (this.isCensored(this.artwork)) {
           this.$toast({
-            message: "根据当前设置，此内容将不予显示",
+            message: "Based on current settings, this content will not be displayed",
             icon: require("@/svg/ban-view.svg")
           });
           setTimeout(() => {
