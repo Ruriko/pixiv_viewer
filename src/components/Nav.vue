@@ -3,19 +3,19 @@
     <ul class="nav-bar">
       <li @click="navigateTo('Home')">
         <Icon class="icon home" name="home" index="Home" :currentIndex="$route.name" />
-        <span>首页</span>
+        <span>Home</span>
       </li>
       <li @click="navigateTo('Search')">
         <Icon class="icon" name="search" index="Search" :currentIndex="$route.name" />
-        <span>搜索</span>
+        <span>Search</span>
       </li>
       <li @click="navigateTo('Rank', {type: 'daily'})">
         <Icon class="icon" name="rank" index="Rank" :currentIndex="$route.name" />
-        <span>排行榜</span>
+        <span>Rank</span>
       </li>
       <li @click="navigateTo('Setting')">
         <Icon class="icon" name="setting" index="Setting" :currentIndex="$route.name" />
-        <span>设置</span>
+        <span>Settings</span>
       </li>
     </ul>
   </div>
