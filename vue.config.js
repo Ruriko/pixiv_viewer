@@ -3,7 +3,7 @@ const pxtorem = require('postcss-pxtorem');
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '././'
+    ? '/'
     : '/',
   chainWebpack: config => {
     config
