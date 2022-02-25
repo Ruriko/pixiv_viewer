@@ -89,11 +89,11 @@ export default {
       let showName;
       switch (type) {
         case "local":
-          showName = "持久化缓存";
+          showName = "Store Cache";
           break;
 
         case "session":
-          showName = "运行时缓存";
+          showName = "Browser Cache";
           break;
 
         default:
