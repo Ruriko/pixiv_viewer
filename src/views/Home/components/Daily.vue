@@ -3,7 +3,7 @@
     <van-cell class="cell" :border="false">
       <template #title>
         <Icon class="icon random" name="random"></Icon>
-        <span class="title">随便看看</span>
+        <span class="title">Browse</span>
       </template>
     </van-cell>
     <van-list
@@ -12,7 +12,7 @@
       :finished="finished"
       finished-text="没有更多了"
       :error.sync="error"
-      error-text="网络异常，点击重新加载"
+      error-text="Network error, click to reload"
       @load="getRankList"
     >
       <div class="card-box">
