@@ -25,6 +25,11 @@
 
 <script>
 import { Cell, Switch, Button, Dialog } from "vant";
+import { Locale } from 'vant';
+import enUS from 'vant/es/locale/lang/en-US';
+
+Locale.use('en-US', enUS);
+
 import { mapState, mapActions } from "vuex";
 import { LocalStorage, SessionStorage } from "@/utils/storage";
 export default {
